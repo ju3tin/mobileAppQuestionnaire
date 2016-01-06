@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="patmaz | cogcoding.com">
+	<title>EMQmobile 1.0</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.js"></script>
+    <script>
+     $(document).on("mobileinit", function() {
+        // performance: disable transitions 
+        $.mobile.defaultPageTransition = 'none';
+        $.mobile.useFastClick  = true;
+        // performance: disable style enhancement of some elements
+        $.mobile.ignoreContentEnabled = true;
+     });
+    </script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+    <script src="js/js.js"></script>
+</head>
+<body>
+
+<!-- EXTERNAL HEADER -->
+<div data-role="header" data-position="fixed" data-theme="a">
+    <h1>EMQmobile 1.0</h1>
+    <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+</div><!-- /external header -->
+
+<!-- ONE -->
+<div data-role="page" id="one">
+
+	<div role="main" class="ui-content">
+        
+        <p><a href="#emq1" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-r ui-btn-icon-left">EMQ wersja dla Pacjenta</a></p>
+        <p><a href="#emq2" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-r ui-btn-icon-left">EMQ wersja dla Opiekuna</a></p>
+        <p><a href="#database" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-left">Baza wyników</a></p>
+        <p><a href="#about" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-left" data-rel="dialog">O programie</a></p>
+
+	</div><!-- /content -->
+
+</div><!-- /ONE -->
+
+<!-- EMQ 1 -->
+<div data-role="page" id="emq1" data-theme="a">
+    
+	<div role="main" class="ui-content">
+		<h2>EMQ wersja dla Pacjenta</h2>
+        
+        <h3>Jak punktować odpowiedzi:</h3>
+        <ol>
+            <li>0 = ani razu w ciągu ostatnich 3 miesięcy</li>
+            <li>1 = mniej więcej raz w ciągu ostatnich 3 miesięcy</li>
+            <li>2 = więcej niż raz w ciągu ostatnich 3 miesięcy, alerzadziej niż raz na miesiąc</li>
+            <li>3 = mniej więcej raz na miesiąc </li>
+            <li>4 = częściej niż raz w miesiącu, ale rzadziej niż raz na tydzień </li>
+            <li>5 = mniej więcej raz na tydzień </li>
+            <li>6 = częściej niż raz na tydzień, ale rzadziej niż raz dziennie </li>
+            <li>7 = mniej więcej raz dziennie </li>
+            <li>8 = częściej niż raz dziennie </li>
+        </ol>
+        
+        <p><a href="#emqPoints" class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-btn-b inLine" data-rel="dialog" data-transition="pop"></a> w prawym dolnym rogu - podgląd sposobu punktowania.</p>
+        <br>
+        <form id="emq1">
+        
+            <label for="patientID_emq1">ID Pacjenta</label>
+            <input name="patientID_emq1" id="patientID_emq1" placeholder="ID Pacjenta" value="" type="text">
+            
+            <label for="age_emq1">Wiek Pacjenta</label>
+            <input name="age_emq1" id="age_emq1" placeholder="wiek" value="" type="text">
+            	
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item01" id="item01_0" class="emq1_radio" value="0" type="radio">
+                <label for="item01_0">0</label>
+                <input name="item01" id="item01_1" class="emq1_radio" value="1" type="radio">
+                <label for="item01_1">1</label>
+                <input name="item01" id="item01_2" class="emq1_radio" value="2" type="radio">
+                <label for="item01_2">2</label>
+                <input name="item01" id="item01_3" class="emq1_radio" value="3" type="radio">
+                <label for="item01_3">3</label>
+                <input name="item01" id="item01_4" class="emq1_radio" value="4" type="radio">
+                <label for="item01_4">4</label>
+                <input name="item01" id="item01_5" class="emq1_radio" value="5" type="radio">
+                <label for="item01_5">5</label>
+                <input name="item01" id="item01_6" class="emq1_radio" value="6" type="radio">
+                <label for="item01_6">6</label>
+                <input name="item01" id="item01_7" class="emq1_radio" value="7" type="radio">
+                <label for="item01_7">7</label>
+                <input name="item01" id="item01_8" class="emq1_radio" value="8" type="radio">
+                <label for="item01_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item02" id="item02_0" class="emq1_radio" value="0" type="radio">
+                <label for="item02_0">0</label>
+                <input name="item02" id="item02_1" class="emq1_radio" value="1" type="radio">
+                <label for="item02_1">1</label>
+                <input name="item02" id="item02_2" class="emq1_radio" value="2" type="radio">
+                <label for="item02_2">2</label>
+                <input name="item02" id="item02_3" class="emq1_radio" value="3" type="radio">
+                <label for="item02_3">3</label>
+                <input name="item02" id="item02_4" class="emq1_radio" value="4" type="radio">
+                <label for="item02_4">4</label>
+                <input name="item02" id="item02_5" class="emq1_radio" value="5" type="radio">
+                <label for="item02_5">5</label>
+                <input name="item02" id="item02_6" class="emq1_radio" value="6" type="radio">
+                <label for="item02_6">6</label>
+                <input name="item02" id="item02_7" class="emq1_radio" value="7" type="radio">
+                <label for="item02_7">7</label>
+                <input name="item02" id="item02_8" class="emq1_radio" value="8" type="radio">
+                <label for="item02_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item03" id="item03_0" class="emq1_radio" value="0" type="radio">
+                <label for="item03_0">0</label>
+                <input name="item03" id="item03_1" class="emq1_radio" value="1" type="radio">
+                <label for="item03_1">1</label>
+                <input name="item03" id="item03_2" class="emq1_radio" value="2" type="radio">
+                <label for="item03_2">2</label>
+                <input name="item03" id="item03_3" class="emq1_radio" value="3" type="radio">
+                <label for="item03_3">3</label>
+                <input name="item03" id="item03_4" class="emq1_radio" value="4" type="radio">
+                <label for="item03_4">4</label>
+                <input name="item03" id="item03_5" class="emq1_radio" value="5" type="radio">
+                <label for="item03_5">5</label>
+                <input name="item03" id="item03_6" class="emq1_radio" value="6" type="radio">
+                <label for="item03_6">6</label>
+                <input name="item03" id="item03_7" class="emq1_radio" value="7" type="radio">
+                <label for="item03_7">7</label>
+                <input name="item03" id="item03_8" class="emq1_radio" value="8" type="radio">
+                <label for="item03_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item04" id="item04_0" class="emq1_radio" value="0" type="radio">
+                <label for="item04_0">0</label>
+                <input name="item04" id="item04_1" class="emq1_radio" value="1" type="radio">
+                <label for="item04_1">1</label>
+                <input name="item04" id="item04_2" class="emq1_radio" value="2" type="radio">
+                <label for="item04_2">2</label>
+                <input name="item04" id="item04_3" class="emq1_radio" value="3" type="radio">
+                <label for="item04_3">3</label>
+                <input name="item04" id="item04_4" class="emq1_radio" value="4" type="radio">
+                <label for="item04_4">4</label>
+                <input name="item04" id="item04_5" class="emq1_radio" value="5" type="radio">
+                <label for="item04_5">5</label>
+                <input name="item04" id="item04_6" class="emq1_radio" value="6" type="radio">
+                <label for="item04_6">6</label>
+                <input name="item04" id="item04_7" class="emq1_radio" value="7" type="radio">
+                <label for="item04_7">7</label>
+                <input name="item04" id="item04_8" class="emq1_radio" value="8" type="radio">
+                <label for="item04_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item05" id="item05_0" class="emq1_radio" value="0" type="radio">
+                <label for="item05_0">0</label>
+                <input name="item05" id="item05_1" class="emq1_radio" value="1" type="radio">
+                <label for="item05_1">1</label>
+                <input name="item05" id="item05_2" class="emq1_radio" value="2" type="radio">
+                <label for="item05_2">2</label>
+                <input name="item05" id="item05_3" class="emq1_radio" value="3" type="radio">
+                <label for="item05_3">3</label>
+                <input name="item05" id="item05_4" class="emq1_radio" value="4" type="radio">
+                <label for="item05_4">4</label>
+                <input name="item05" id="item05_5" class="emq1_radio" value="5" type="radio">
+                <label for="item05_5">5</label>
+                <input name="item05" id="item05_6" class="emq1_radio" value="6" type="radio">
+                <label for="item05_6">6</label>
+                <input name="item05" id="item05_7" class="emq1_radio" value="7" type="radio">
+                <label for="item05_7">7</label>
+                <input name="item05" id="item05_8" class="emq1_radio" value="8" type="radio">
+                <label for="item05_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item06" id="item06_0" class="emq1_radio" value="0" type="radio">
+                <label for="item06_0">0</label>
+                <input name="item06" id="item06_1" class="emq1_radio" value="1" type="radio">
+                <label for="item06_1">1</label>
+                <input name="item06" id="item06_2" class="emq1_radio" value="2" type="radio">
+                <label for="item06_2">2</label>
+                <input name="item06" id="item06_3" class="emq1_radio" value="3" type="radio">
+                <label for="item06_3">3</label>
+                <input name="item06" id="item06_4" class="emq1_radio" value="4" type="radio">
+                <label for="item06_4">4</label>
+                <input name="item06" id="item06_5" class="emq1_radio" value="5" type="radio">
+                <label for="item06_5">5</label>
+                <input name="item06" id="item06_6" class="emq1_radio" value="6" type="radio">
+                <label for="item06_6">6</label>
+                <input name="item06" id="item06_7" class="emq1_radio" value="7" type="radio">
+                <label for="item06_7">7</label>
+                <input name="item06" id="item06_8" class="emq1_radio" value="8" type="radio">
+                <label for="item06_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item07" id="item07_0" class="emq1_radio" value="0" type="radio">
+                <label for="item07_0">0</label>
+                <input name="item07" id="item07_1" class="emq1_radio" value="1" type="radio">
+                <label for="item07_1">1</label>
+                <input name="item07" id="item07_2" class="emq1_radio" value="2" type="radio">
+                <label for="item07_2">2</label>
+                <input name="item07" id="item07_3" class="emq1_radio" value="3" type="radio">
+                <label for="item07_3">3</label>
+                <input name="item07" id="item07_4" class="emq1_radio" value="4" type="radio">
+                <label for="item07_4">4</label>
+                <input name="item07" id="item07_5" class="emq1_radio" value="5" type="radio">
+                <label for="item07_5">5</label>
+                <input name="item07" id="item07_6" class="emq1_radio" value="6" type="radio">
+                <label for="item07_6">6</label>
+                <input name="item07" id="item07_7" class="emq1_radio" value="7" type="radio">
+                <label for="item07_7">7</label>
+                <input name="item07" id="item07_8" class="emq1_radio" value="8" type="radio">
+                <label for="item07_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item08" id="item08_0" class="emq1_radio" value="0" type="radio">
+                <label for="item08_0">0</label>
+                <input name="item08" id="item08_1" class="emq1_radio" value="1" type="radio">
+                <label for="item08_1">1</label>
+                <input name="item08" id="item08_2" class="emq1_radio" value="2" type="radio">
+                <label for="item08_2">2</label>
+                <input name="item08" id="item08_3" class="emq1_radio" value="3" type="radio">
+                <label for="item08_3">3</label>
+                <input name="item08" id="item08_4" class="emq1_radio" value="4" type="radio">
+                <label for="item08_4">4</label>
+                <input name="item08" id="item08_5" class="emq1_radio" value="5" type="radio">
+                <label for="item08_5">5</label>
+                <input name="item08" id="item08_6" class="emq1_radio" value="6" type="radio">
+                <label for="item08_6">6</label>
+                <input name="item08" id="item08_7" class="emq1_radio" value="7" type="radio">
+                <label for="item08_7">7</label>
+                <input name="item08" id="item08_8" class="emq1_radio" value="8" type="radio">
+                <label for="item08_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item09" id="item09_0" class="emq1_radio" value="0" type="radio">
+                <label for="item09_0">0</label>
+                <input name="item09" id="item09_1" class="emq1_radio" value="1" type="radio">
+                <label for="item09_1">1</label>
+                <input name="item09" id="item09_2" class="emq1_radio" value="2" type="radio">
+                <label for="item09_2">2</label>
+                <input name="item09" id="item09_3" class="emq1_radio" value="3" type="radio">
+                <label for="item09_3">3</label>
+                <input name="item09" id="item09_4" class="emq1_radio" value="4" type="radio">
+                <label for="item09_4">4</label>
+                <input name="item09" id="item09_5" class="emq1_radio" value="5" type="radio">
+                <label for="item09_5">5</label>
+                <input name="item09" id="item09_6" class="emq1_radio" value="6" type="radio">
+                <label for="item09_6">6</label>
+                <input name="item09" id="item09_7" class="emq1_radio" value="7" type="radio">
+                <label for="item09_7">7</label>
+                <input name="item09" id="item09_8" class="emq1_radio" value="8" type="radio">
+                <label for="item09_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item10" id="item10_0" class="emq1_radio" value="0" type="radio">
+                <label for="item10_0">0</label>
+                <input name="item10" id="item10_1" class="emq1_radio" value="1" type="radio">
+                <label for="item10_1">1</label>
+                <input name="item10" id="item10_2" class="emq1_radio" value="2" type="radio">
+                <label for="item10_2">2</label>
+                <input name="item10" id="item10_3" class="emq1_radio" value="3" type="radio">
+                <label for="item10_3">3</label>
+                <input name="item10" id="item10_4" class="emq1_radio" value="4" type="radio">
+                <label for="item10_4">4</label>
+                <input name="item10" id="item10_5" class="emq1_radio" value="5" type="radio">
+                <label for="item10_5">5</label>
+                <input name="item10" id="item10_6" class="emq1_radio" value="6" type="radio">
+                <label for="item10_6">6</label>
+                <input name="item10" id="item10_7" class="emq1_radio" value="7" type="radio">
+                <label for="item10_7">7</label>
+                <input name="item10" id="item10_8" class="emq1_radio" value="8" type="radio">
+                <label for="item10_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item11" id="item11_0" class="emq1_radio" value="0" type="radio">
+                <label for="item11_0">0</label>
+                <input name="item11" id="item11_1" class="emq1_radio" value="1" type="radio">
+                <label for="item11_1">1</label>
+                <input name="item11" id="item11_2" class="emq1_radio" value="2" type="radio">
+                <label for="item11_2">2</label>
+                <input name="item11" id="item11_3" class="emq1_radio" value="3" type="radio">
+                <label for="item11_3">3</label>
+                <input name="item11" id="item11_4" class="emq1_radio" value="4" type="radio">
+                <label for="item11_4">4</label>
+                <input name="item11" id="item11_5" class="emq1_radio" value="5" type="radio">
+                <label for="item11_5">5</label>
+                <input name="item11" id="item11_6" class="emq1_radio" value="6" type="radio">
+                <label for="item11_6">6</label>
+                <input name="item11" id="item11_7" class="emq1_radio" value="7" type="radio">
+                <label for="item11_7">7</label>
+                <input name="item11" id="item11_8" class="emq1_radio" value="8" type="radio">
+                <label for="item11_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item12" id="item12_0" class="emq1_radio" value="0" type="radio">
+                <label for="item12_0">0</label>
+                <input name="item12" id="item12_1" class="emq1_radio" value="1" type="radio">
+                <label for="item12_1">1</label>
+                <input name="item12" id="item12_2" class="emq1_radio" value="2" type="radio">
+                <label for="item12_2">2</label>
+                <input name="item12" id="item12_3" class="emq1_radio" value="3" type="radio">
+                <label for="item12_3">3</label>
+                <input name="item12" id="item12_4" class="emq1_radio" value="4" type="radio">
+                <label for="item12_4">4</label>
+                <input name="item12" id="item12_5" class="emq1_radio" value="5" type="radio">
+                <label for="item12_5">5</label>
+                <input name="item12" id="item12_6" class="emq1_radio" value="6" type="radio">
+                <label for="item12_6">6</label>
+                <input name="item12" id="item12_7" class="emq1_radio" value="7" type="radio">
+                <label for="item12_7">7</label>
+                <input name="item12" id="item12_8" class="emq1_radio" value="8" type="radio">
+                <label for="item12_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item13" id="item13_0" class="emq1_radio" value="0" type="radio">
+                <label for="item13_0">0</label>
+                <input name="item13" id="item13_1" class="emq1_radio" value="1" type="radio">
+                <label for="item13_1">1</label>
+                <input name="item13" id="item13_2" class="emq1_radio" value="2" type="radio">
+                <label for="item13_2">2</label>
+                <input name="item13" id="item13_3" class="emq1_radio" value="3" type="radio">
+                <label for="item13_3">3</label>
+                <input name="item13" id="item13_4" class="emq1_radio" value="4" type="radio">
+                <label for="item13_4">4</label>
+                <input name="item13" id="item13_5" class="emq1_radio" value="5" type="radio">
+                <label for="item13_5">5</label>
+                <input name="item13" id="item13_6" class="emq1_radio" value="6" type="radio">
+                <label for="item13_6">6</label>
+                <input name="item13" id="item13_7" class="emq1_radio" value="7" type="radio">
+                <label for="item13_7">7</label>
+                <input name="item13" id="item13_8" class="emq1_radio" value="8" type="radio">
+                <label for="item13_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item14" id="item14_0" class="emq1_radio" value="0" type="radio">
+                <label for="item14_0">0</label>
+                <input name="item14" id="item14_1" class="emq1_radio" value="1" type="radio">
+                <label for="item14_1">1</label>
+                <input name="item14" id="item14_2" class="emq1_radio" value="2" type="radio">
+                <label for="item14_2">2</label>
+                <input name="item14" id="item14_3" class="emq1_radio" value="3" type="radio">
+                <label for="item14_3">3</label>
+                <input name="item14" id="item14_4" class="emq1_radio" value="4" type="radio">
+                <label for="item14_4">4</label>
+                <input name="item14" id="item14_5" class="emq1_radio" value="5" type="radio">
+                <label for="item14_5">5</label>
+                <input name="item14" id="item14_6" class="emq1_radio" value="6" type="radio">
+                <label for="item14_6">6</label>
+                <input name="item14" id="item14_7" class="emq1_radio" value="7" type="radio">
+                <label for="item14_7">7</label>
+                <input name="item14" id="item14_8" class="emq1_radio" value="8" type="radio">
+                <label for="item14_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item15" id="item15_0" class="emq1_radio" value="0" type="radio">
+                <label for="item15_0">0</label>
+                <input name="item15" id="item15_1" class="emq1_radio" value="1" type="radio">
+                <label for="item15_1">1</label>
+                <input name="item15" id="item15_2" class="emq1_radio" value="2" type="radio">
+                <label for="item15_2">2</label>
+                <input name="item15" id="item15_3" class="emq1_radio" value="3" type="radio">
+                <label for="item15_3">3</label>
+                <input name="item15" id="item15_4" class="emq1_radio" value="4" type="radio">
+                <label for="item15_4">4</label>
+                <input name="item15" id="item15_5" class="emq1_radio" value="5" type="radio">
+                <label for="item15_5">5</label>
+                <input name="item15" id="item15_6" class="emq1_radio" value="6" type="radio">
+                <label for="item15_6">6</label>
+                <input name="item15" id="item15_7" class="emq1_radio" value="7" type="radio">
+                <label for="item15_7">7</label>
+                <input name="item15" id="item15_8" class="emq1_radio" value="8" type="radio">
+                <label for="item15_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item16" id="item16_0" class="emq1_radio" value="0" type="radio">
+                <label for="item16_0">0</label>
+                <input name="item16" id="item16_1" class="emq1_radio" value="1" type="radio">
+                <label for="item16_1">1</label>
+                <input name="item16" id="item16_2" class="emq1_radio" value="2" type="radio">
+                <label for="item16_2">2</label>
+                <input name="item16" id="item16_3" class="emq1_radio" value="3" type="radio">
+                <label for="item16_3">3</label>
+                <input name="item16" id="item16_4" class="emq1_radio" value="4" type="radio">
+                <label for="item16_4">4</label>
+                <input name="item16" id="item16_5" class="emq1_radio" value="5" type="radio">
+                <label for="item16_5">5</label>
+                <input name="item16" id="item16_6" class="emq1_radio" value="6" type="radio">
+                <label for="item16_6">6</label>
+                <input name="item16" id="item16_7" class="emq1_radio" value="7" type="radio">
+                <label for="item16_7">7</label>
+                <input name="item16" id="item16_8" class="emq1_radio" value="8" type="radio">
+                <label for="item16_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item17" id="item17_0" class="emq1_radio" value="0" type="radio">
+                <label for="item17_0">0</label>
+                <input name="item17" id="item17_1" class="emq1_radio" value="1" type="radio">
+                <label for="item17_1">1</label>
+                <input name="item17" id="item17_2" class="emq1_radio" value="2" type="radio">
+                <label for="item17_2">2</label>
+                <input name="item17" id="item17_3" class="emq1_radio" value="3" type="radio">
+                <label for="item17_3">3</label>
+                <input name="item17" id="item17_4" class="emq1_radio" value="4" type="radio">
+                <label for="item17_4">4</label>
+                <input name="item17" id="item17_5" class="emq1_radio" value="5" type="radio">
+                <label for="item17_5">5</label>
+                <input name="item17" id="item17_6" class="emq1_radio" value="6" type="radio">
+                <label for="item17_6">6</label>
+                <input name="item17" id="item17_7" class="emq1_radio" value="7" type="radio">
+                <label for="item17_7">7</label>
+                <input name="item17" id="item17_8" class="emq1_radio" value="8" type="radio">
+                <label for="item17_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item18" id="item18_0" class="emq1_radio" value="0" type="radio">
+                <label for="item18_0">0</label>
+                <input name="item18" id="item18_1" class="emq1_radio" value="1" type="radio">
+                <label for="item18_1">1</label>
+                <input name="item18" id="item18_2" class="emq1_radio" value="2" type="radio">
+                <label for="item18_2">2</label>
+                <input name="item18" id="item18_3" class="emq1_radio" value="3" type="radio">
+                <label for="item18_3">3</label>
+                <input name="item18" id="item18_4" class="emq1_radio" value="4" type="radio">
+                <label for="item18_4">4</label>
+                <input name="item18" id="item18_5" class="emq1_radio" value="5" type="radio">
+                <label for="item18_5">5</label>
+                <input name="item18" id="item18_6" class="emq1_radio" value="6" type="radio">
+                <label for="item18_6">6</label>
+                <input name="item18" id="item18_7" class="emq1_radio" value="7" type="radio">
+                <label for="item18_7">7</label>
+                <input name="item18" id="item18_8" class="emq1_radio" value="8" type="radio">
+                <label for="item18_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item19" id="item19_0" class="emq1_radio" value="0" type="radio">
+                <label for="item19_0">0</label>
+                <input name="item19" id="item19_1" class="emq1_radio" value="1" type="radio">
+                <label for="item19_1">1</label>
+                <input name="item19" id="item19_2" class="emq1_radio" value="2" type="radio">
+                <label for="item19_2">2</label>
+                <input name="item19" id="item19_3" class="emq1_radio" value="3" type="radio">
+                <label for="item19_3">3</label>
+                <input name="item19" id="item19_4" class="emq1_radio" value="4" type="radio">
+                <label for="item19_4">4</label>
+                <input name="item19" id="item19_5" class="emq1_radio" value="5" type="radio">
+                <label for="item19_5">5</label>
+                <input name="item19" id="item19_6" class="emq1_radio" value="6" type="radio">
+                <label for="item19_6">6</label>
+                <input name="item19" id="item19_7" class="emq1_radio" value="7" type="radio">
+                <label for="item19_7">7</label>
+                <input name="item19" id="item19_8" class="emq1_radio" value="8" type="radio">
+                <label for="item19_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item20" id="item20_0" class="emq1_radio" value="0" type="radio">
+                <label for="item20_0">0</label>
+                <input name="item20" id="item20_1" class="emq1_radio" value="1" type="radio">
+                <label for="item20_1">1</label>
+                <input name="item20" id="item20_2" class="emq1_radio" value="2" type="radio">
+                <label for="item20_2">2</label>
+                <input name="item20" id="item20_3" class="emq1_radio" value="3" type="radio">
+                <label for="item20_3">3</label>
+                <input name="item20" id="item20_4" class="emq1_radio" value="4" type="radio">
+                <label for="item20_4">4</label>
+                <input name="item20" id="item20_5" class="emq1_radio" value="5" type="radio">
+                <label for="item20_5">5</label>
+                <input name="item20" id="item20_6" class="emq1_radio" value="6" type="radio">
+                <label for="item20_6">6</label>
+                <input name="item20" id="item20_7" class="emq1_radio" value="7" type="radio">
+                <label for="item20_7">7</label>
+                <input name="item20" id="item20_8" class="emq1_radio" value="8" type="radio">
+                <label for="item20_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item21" id="item21_0" class="emq1_radio" value="0" type="radio">
+                <label for="item21_0">0</label>
+                <input name="item21" id="item21_1" class="emq1_radio" value="1" type="radio">
+                <label for="item21_1">1</label>
+                <input name="item21" id="item21_2" class="emq1_radio" value="2" type="radio">
+                <label for="item21_2">2</label>
+                <input name="item21" id="item21_3" class="emq1_radio" value="3" type="radio">
+                <label for="item21_3">3</label>
+                <input name="item21" id="item21_4" class="emq1_radio" value="4" type="radio">
+                <label for="item21_4">4</label>
+                <input name="item21" id="item21_5" class="emq1_radio" value="5" type="radio">
+                <label for="item21_5">5</label>
+                <input name="item21" id="item21_6" class="emq1_radio" value="6" type="radio">
+                <label for="item21_6">6</label>
+                <input name="item21" id="item21_7" class="emq1_radio" value="7" type="radio">
+                <label for="item21_7">7</label>
+                <input name="item21" id="item21_8" class="emq1_radio" value="8" type="radio">
+                <label for="item21_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item22" id="item22_0" class="emq1_radio" value="0" type="radio">
+                <label for="item22_0">0</label>
+                <input name="item22" id="item22_1" class="emq1_radio" value="1" type="radio">
+                <label for="item22_1">1</label>
+                <input name="item22" id="item22_2" class="emq1_radio" value="2" type="radio">
+                <label for="item22_2">2</label>
+                <input name="item22" id="item22_3" class="emq1_radio" value="3" type="radio">
+                <label for="item22_3">3</label>
+                <input name="item22" id="item22_4" class="emq1_radio" value="4" type="radio">
+                <label for="item22_4">4</label>
+                <input name="item22" id="item22_5" class="emq1_radio" value="5" type="radio">
+                <label for="item22_5">5</label>
+                <input name="item22" id="item22_6" class="emq1_radio" value="6" type="radio">
+                <label for="item22_6">6</label>
+                <input name="item22" id="item22_7" class="emq1_radio" value="7" type="radio">
+                <label for="item22_7">7</label>
+                <input name="item22" id="item22_8" class="emq1_radio" value="8" type="radio">
+                <label for="item22_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item23" id="item23_0" class="emq1_radio" value="0" type="radio">
+                <label for="item23_0">0</label>
+                <input name="item23" id="item23_1" class="emq1_radio" value="1" type="radio">
+                <label for="item23_1">1</label>
+                <input name="item23" id="item23_2" class="emq1_radio" value="2" type="radio">
+                <label for="item23_2">2</label>
+                <input name="item23" id="item23_3" class="emq1_radio" value="3" type="radio">
+                <label for="item23_3">3</label>
+                <input name="item23" id="item23_4" class="emq1_radio" value="4" type="radio">
+                <label for="item23_4">4</label>
+                <input name="item23" id="item23_5" class="emq1_radio" value="5" type="radio">
+                <label for="item23_5">5</label>
+                <input name="item23" id="item23_6" class="emq1_radio" value="6" type="radio">
+                <label for="item23_6">6</label>
+                <input name="item23" id="item23_7" class="emq1_radio" value="7" type="radio">
+                <label for="item23_7">7</label>
+                <input name="item23" id="item23_8" class="emq1_radio" value="8" type="radio">
+                <label for="item23_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item24" id="item24_0" class="emq1_radio" value="0" type="radio">
+                <label for="item24_0">0</label>
+                <input name="item24" id="item24_1" class="emq1_radio" value="1" type="radio">
+                <label for="item24_1">1</label>
+                <input name="item24" id="item24_2" class="emq1_radio" value="2" type="radio">
+                <label for="item24_2">2</label>
+                <input name="item24" id="item24_3" class="emq1_radio" value="3" type="radio">
+                <label for="item24_3">3</label>
+                <input name="item24" id="item24_4" class="emq1_radio" value="4" type="radio">
+                <label for="item24_4">4</label>
+                <input name="item24" id="item24_5" class="emq1_radio" value="5" type="radio">
+                <label for="item24_5">5</label>
+                <input name="item24" id="item24_6" class="emq1_radio" value="6" type="radio">
+                <label for="item24_6">6</label>
+                <input name="item24" id="item24_7" class="emq1_radio" value="7" type="radio">
+                <label for="item24_7">7</label>
+                <input name="item24" id="item24_8" class="emq1_radio" value="8" type="radio">
+                <label for="item24_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item25" id="item25_0" class="emq1_radio" value="0" type="radio">
+                <label for="item25_0">0</label>
+                <input name="item25" id="item25_1" class="emq1_radio" value="1" type="radio">
+                <label for="item25_1">1</label>
+                <input name="item25" id="item25_2" class="emq1_radio" value="2" type="radio">
+                <label for="item25_2">2</label>
+                <input name="item25" id="item25_3" class="emq1_radio" value="3" type="radio">
+                <label for="item25_3">3</label>
+                <input name="item25" id="item25_4" class="emq1_radio" value="4" type="radio">
+                <label for="item25_4">4</label>
+                <input name="item25" id="item25_5" class="emq1_radio" value="5" type="radio">
+                <label for="item25_5">5</label>
+                <input name="item25" id="item25_6" class="emq1_radio" value="6" type="radio">
+                <label for="item25_6">6</label>
+                <input name="item25" id="item25_7" class="emq1_radio" value="7" type="radio">
+                <label for="item25_7">7</label>
+                <input name="item25" id="item25_8" class="emq1_radio" value="8" type="radio">
+                <label for="item25_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item26" id="item26_0" class="emq1_radio" value="0" type="radio">
+                <label for="item26_0">0</label>
+                <input name="item26" id="item26_1" class="emq1_radio" value="1" type="radio">
+                <label for="item26_1">1</label>
+                <input name="item26" id="item26_2" class="emq1_radio" value="2" type="radio">
+                <label for="item26_2">2</label>
+                <input name="item26" id="item26_3" class="emq1_radio" value="3" type="radio">
+                <label for="item26_3">3</label>
+                <input name="item26" id="item26_4" class="emq1_radio" value="4" type="radio">
+                <label for="item26_4">4</label>
+                <input name="item26" id="item26_5" class="emq1_radio" value="5" type="radio">
+                <label for="item26_5">5</label>
+                <input name="item26" id="item26_6" class="emq1_radio" value="6" type="radio">
+                <label for="item26_6">6</label>
+                <input name="item26" id="item26_7" class="emq1_radio" value="7" type="radio">
+                <label for="item26_7">7</label>
+                <input name="item26" id="item26_8" class="emq1_radio" value="8" type="radio">
+                <label for="item26_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item27" id="item27_0" class="emq1_radio" value="0" type="radio">
+                <label for="item27_0">0</label>
+                <input name="item27" id="item27_1" class="emq1_radio" value="1" type="radio">
+                <label for="item27_1">1</label>
+                <input name="item27" id="item27_2" class="emq1_radio" value="2" type="radio">
+                <label for="item27_2">2</label>
+                <input name="item27" id="item27_3" class="emq1_radio" value="3" type="radio">
+                <label for="item27_3">3</label>
+                <input name="item27" id="item27_4" class="emq1_radio" value="4" type="radio">
+                <label for="item27_4">4</label>
+                <input name="item27" id="item27_5" class="emq1_radio" value="5" type="radio">
+                <label for="item27_5">5</label>
+                <input name="item27" id="item27_6" class="emq1_radio" value="6" type="radio">
+                <label for="item27_6">6</label>
+                <input name="item27" id="item27_7" class="emq1_radio" value="7" type="radio">
+                <label for="item27_7">7</label>
+                <input name="item27" id="item27_8" class="emq1_radio" value="8" type="radio">
+                <label for="item27_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="item28" id="item28_0" class="emq1_radio" value="0" type="radio">
+                <label for="item28_0">0</label>
+                <input name="item28" id="item28_1" class="emq1_radio" value="1" type="radio">
+                <label for="item28_1">1</label>
+                <input name="item28" id="item28_2" class="emq1_radio" value="2" type="radio">
+                <label for="item28_2">2</label>
+                <input name="item28" id="item28_3" class="emq1_radio" value="3" type="radio">
+                <label for="item28_3">3</label>
+                <input name="item28" id="item28_4" class="emq1_radio" value="4" type="radio">
+                <label for="item28_4">4</label>
+                <input name="item28" id="item28_5" class="emq1_radio" value="5" type="radio">
+                <label for="item28_5">5</label>
+                <input name="item28" id="item28_6" class="emq1_radio" value="6" type="radio">
+                <label for="item28_6">6</label>
+                <input name="item28" id="item28_7" class="emq1_radio" value="7" type="radio">
+                <label for="item28_7">7</label>
+                <input name="item28" id="item28_8" class="emq1_radio" value="8" type="radio">
+                <label for="item28_8">8</label>
+            </fieldset>
+            
+            <div id="totalSum_emq1">
+                <!-- sum result -->
+            </div>
+            
+            <input data-theme="b" value="Zapisz" type="button" id="btnSubmit_emq1">
+        </form>
+            <input data-theme="b" value="Wyczyść" type="button" id="reset_emq1">
+		<p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b"><<<</a></p>
+            
+        <a href="#emqPoints" class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-btn-b btnCheatSheet" data-rel="dialog" data-transition="pop"></a>
+	</div><!-- /content -->
+
+</div><!-- /EMQ 1 -->
+    
+<!-- EMQ 2 -->
+<div data-role="page" id="emq2" data-theme="a">
+
+<div role="main" class="ui-content">
+		<h2>EMQ wersja dla Opiekuna</h2>
+        
+        <h3>Jak punktować odpowiedzi:</h3>
+        <ol>
+            <li>0 = ani razu w ciągu ostatnich 3 miesięcy</li>
+            <li>1 = mniej więcej raz w ciągu ostatnich 3 miesięcy</li>
+            <li>2 = więcej niż raz w ciągu ostatnich 3 miesięcy, alerzadziej niż raz na miesiąc</li>
+            <li>3 = mniej więcej raz na miesiąc </li>
+            <li>4 = częściej niż raz w miesiącu, ale rzadziej niż raz na tydzień </li>
+            <li>5 = mniej więcej raz na tydzień </li>
+            <li>6 = częściej niż raz na tydzień, ale rzadziej niż raz dziennie </li>
+            <li>7 = mniej więcej raz dziennie </li>
+            <li>8 = częściej niż raz dziennie </li>
+        </ol>
+    
+        <p><a href="#emqPoints" class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-btn-b inLine" data-rel="dialog" data-transition="pop"></a> w prawym dolnym rogu - podgląd sposobu punktowania.</p>
+        <br>
+        <form id="emq2">
+        
+            <label for="patientID_emq2">ID Pacjenta</label>
+            <input name="patientID_emq2" id="patientID_emq2" placeholder="ID Pacjenta" value="" type="text">
+            
+            <label for="age_emq2">Wiek Pacjenta</label>
+            <input name="age_emq2" id="age_emq2" placeholder="wiek" value="" type="text">
+            	
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item01" id="emq2_item01_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item01_0">0</label>
+                <input name="emq2_item01" id="emq2_item01_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item01_1">1</label>
+                <input name="emq2_item01" id="emq2_item01_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item01_2">2</label>
+                <input name="emq2_item01" id="emq2_item01_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item01_3">3</label>
+                <input name="emq2_item01" id="emq2_item01_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item01_4">4</label>
+                <input name="emq2_item01" id="emq2_item01_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item01_5">5</label>
+                <input name="emq2_item01" id="emq2_item01_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item01_6">6</label>
+                <input name="emq2_item01" id="emq2_item01_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item01_7">7</label>
+                <input name="emq2_item01" id="emq2_item01_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item01_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item02" id="emq2_item02_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item02_0">0</label>
+                <input name="emq2_item02" id="emq2_item02_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item02_1">1</label>
+                <input name="emq2_item02" id="emq2_item02_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item02_2">2</label>
+                <input name="emq2_item02" id="emq2_item02_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item02_3">3</label>
+                <input name="emq2_item02" id="emq2_item02_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item02_4">4</label>
+                <input name="emq2_item02" id="emq2_item02_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item02_5">5</label>
+                <input name="emq2_item02" id="emq2_item02_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item02_6">6</label>
+                <input name="emq2_item02" id="emq2_item02_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item02_7">7</label>
+                <input name="emq2_item02" id="emq2_item02_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item02_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item03" id="emq2_item03_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item03_0">0</label>
+                <input name="emq2_item03" id="emq2_item03_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item03_1">1</label>
+                <input name="emq2_item03" id="emq2_item03_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item03_2">2</label>
+                <input name="emq2_item03" id="emq2_item03_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item03_3">3</label>
+                <input name="emq2_item03" id="emq2_item03_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item03_4">4</label>
+                <input name="emq2_item03" id="emq2_item03_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item03_5">5</label>
+                <input name="emq2_item03" id="emq2_item03_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item03_6">6</label>
+                <input name="emq2_item03" id="emq2_item03_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item03_7">7</label>
+                <input name="emq2_item03" id="emq2_item03_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item03_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item04" id="emq2_item04_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item04_0">0</label>
+                <input name="emq2_item04" id="emq2_item04_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item04_1">1</label>
+                <input name="emq2_item04" id="emq2_item04_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item04_2">2</label>
+                <input name="emq2_item04" id="emq2_item04_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item04_3">3</label>
+                <input name="emq2_item04" id="emq2_item04_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item04_4">4</label>
+                <input name="emq2_item04" id="emq2_item04_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item04_5">5</label>
+                <input name="emq2_item04" id="emq2_item04_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item04_6">6</label>
+                <input name="emq2_item04" id="emq2_item04_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item04_7">7</label>
+                <input name="emq2_item04" id="emq2_item04_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item04_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item05" id="emq2_item05_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item05_0">0</label>
+                <input name="emq2_item05" id="emq2_item05_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item05_1">1</label>
+                <input name="emq2_item05" id="emq2_item05_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item05_2">2</label>
+                <input name="emq2_item05" id="emq2_item05_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item05_3">3</label>
+                <input name="emq2_item05" id="emq2_item05_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item05_4">4</label>
+                <input name="emq2_item05" id="emq2_item05_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item05_5">5</label>
+                <input name="emq2_item05" id="emq2_item05_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item05_6">6</label>
+                <input name="emq2_item05" id="emq2_item05_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item05_7">7</label>
+                <input name="emq2_item05" id="emq2_item05_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item05_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item06" id="emq2_item06_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item06_0">0</label>
+                <input name="emq2_item06" id="emq2_item06_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item06_1">1</label>
+                <input name="emq2_item06" id="emq2_item06_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item06_2">2</label>
+                <input name="emq2_item06" id="emq2_item06_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item06_3">3</label>
+                <input name="emq2_item06" id="emq2_item06_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item06_4">4</label>
+                <input name="emq2_item06" id="emq2_item06_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item06_5">5</label>
+                <input name="emq2_item06" id="emq2_item06_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item06_6">6</label>
+                <input name="emq2_item06" id="emq2_item06_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item06_7">7</label>
+                <input name="emq2_item06" id="emq2_item06_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item06_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item07" id="emq2_item07_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item07_0">0</label>
+                <input name="emq2_item07" id="emq2_item07_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item07_1">1</label>
+                <input name="emq2_item07" id="emq2_item07_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item07_2">2</label>
+                <input name="emq2_item07" id="emq2_item07_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item07_3">3</label>
+                <input name="emq2_item07" id="emq2_item07_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item07_4">4</label>
+                <input name="emq2_item07" id="emq2_item07_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item07_5">5</label>
+                <input name="emq2_item07" id="emq2_item07_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item07_6">6</label>
+                <input name="emq2_item07" id="emq2_item07_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item07_7">7</label>
+                <input name="emq2_item07" id="emq2_item07_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item07_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item08" id="emq2_item08_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item08_0">0</label>
+                <input name="emq2_item08" id="emq2_item08_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item08_1">1</label>
+                <input name="emq2_item08" id="emq2_item08_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item08_2">2</label>
+                <input name="emq2_item08" id="emq2_item08_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item08_3">3</label>
+                <input name="emq2_item08" id="emq2_item08_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item08_4">4</label>
+                <input name="emq2_item08" id="emq2_item08_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item08_5">5</label>
+                <input name="emq2_item08" id="emq2_item08_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item08_6">6</label>
+                <input name="emq2_item08" id="emq2_item08_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item08_7">7</label>
+                <input name="emq2_item08" id="emq2_item08_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item08_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item09" id="emq2_item09_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item09_0">0</label>
+                <input name="emq2_item09" id="emq2_item09_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item09_1">1</label>
+                <input name="emq2_item09" id="emq2_item09_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item09_2">2</label>
+                <input name="emq2_item09" id="emq2_item09_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item09_3">3</label>
+                <input name="emq2_item09" id="emq2_item09_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item09_4">4</label>
+                <input name="emq2_item09" id="emq2_item09_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item09_5">5</label>
+                <input name="emq2_item09" id="emq2_item09_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item09_6">6</label>
+                <input name="emq2_item09" id="emq2_item09_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item09_7">7</label>
+                <input name="emq2_item09" id="emq2_item09_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item09_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item10" id="emq2_item10_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item10_0">0</label>
+                <input name="emq2_item10" id="emq2_item10_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item10_1">1</label>
+                <input name="emq2_item10" id="emq2_item10_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item10_2">2</label>
+                <input name="emq2_item10" id="emq2_item10_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item10_3">3</label>
+                <input name="emq2_item10" id="emq2_item10_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item10_4">4</label>
+                <input name="emq2_item10" id="emq2_item10_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item10_5">5</label>
+                <input name="emq2_item10" id="emq2_item10_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item10_6">6</label>
+                <input name="emq2_item10" id="emq2_item10_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item10_7">7</label>
+                <input name="emq2_item10" id="emq2_item10_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item10_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item11" id="emq2_item11_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item11_0">0</label>
+                <input name="emq2_item11" id="emq2_item11_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item11_1">1</label>
+                <input name="emq2_item11" id="emq2_item11_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item11_2">2</label>
+                <input name="emq2_item11" id="emq2_item11_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item11_3">3</label>
+                <input name="emq2_item11" id="emq2_item11_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item11_4">4</label>
+                <input name="emq2_item11" id="emq2_item11_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item11_5">5</label>
+                <input name="emq2_item11" id="emq2_item11_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item11_6">6</label>
+                <input name="emq2_item11" id="emq2_item11_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item11_7">7</label>
+                <input name="emq2_item11" id="emq2_item11_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item11_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item12" id="emq2_item12_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item12_0">0</label>
+                <input name="emq2_item12" id="emq2_item12_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item12_1">1</label>
+                <input name="emq2_item12" id="emq2_item12_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item12_2">2</label>
+                <input name="emq2_item12" id="emq2_item12_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item12_3">3</label>
+                <input name="emq2_item12" id="emq2_item12_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item12_4">4</label>
+                <input name="emq2_item12" id="emq2_item12_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item12_5">5</label>
+                <input name="emq2_item12" id="emq2_item12_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item12_6">6</label>
+                <input name="emq2_item12" id="emq2_item12_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item12_7">7</label>
+                <input name="emq2_item12" id="emq2_item12_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item12_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item13" id="emq2_item13_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item13_0">0</label>
+                <input name="emq2_item13" id="emq2_item13_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item13_1">1</label>
+                <input name="emq2_item13" id="emq2_item13_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item13_2">2</label>
+                <input name="emq2_item13" id="emq2_item13_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item13_3">3</label>
+                <input name="emq2_item13" id="emq2_item13_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item13_4">4</label>
+                <input name="emq2_item13" id="emq2_item13_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item13_5">5</label>
+                <input name="emq2_item13" id="emq2_item13_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item13_6">6</label>
+                <input name="emq2_item13" id="emq2_item13_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item13_7">7</label>
+                <input name="emq2_item13" id="emq2_item13_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item13_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item14" id="emq2_item14_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item14_0">0</label>
+                <input name="emq2_item14" id="emq2_item14_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item14_1">1</label>
+                <input name="emq2_item14" id="emq2_item14_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item14_2">2</label>
+                <input name="emq2_item14" id="emq2_item14_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item14_3">3</label>
+                <input name="emq2_item14" id="emq2_item14_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item14_4">4</label>
+                <input name="emq2_item14" id="emq2_item14_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item14_5">5</label>
+                <input name="emq2_item14" id="emq2_item14_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item14_6">6</label>
+                <input name="emq2_item14" id="emq2_item14_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item14_7">7</label>
+                <input name="emq2_item14" id="emq2_item14_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item14_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item15" id="emq2_item15_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item15_0">0</label>
+                <input name="emq2_item15" id="emq2_item15_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item15_1">1</label>
+                <input name="emq2_item15" id="emq2_item15_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item15_2">2</label>
+                <input name="emq2_item15" id="emq2_item15_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item15_3">3</label>
+                <input name="emq2_item15" id="emq2_item15_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item15_4">4</label>
+                <input name="emq2_item15" id="emq2_item15_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item15_5">5</label>
+                <input name="emq2_item15" id="emq2_item15_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item15_6">6</label>
+                <input name="emq2_item15" id="emq2_item15_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item15_7">7</label>
+                <input name="emq2_item15" id="emq2_item15_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item15_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item16" id="emq2_item16_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item16_0">0</label>
+                <input name="emq2_item16" id="emq2_item16_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item16_1">1</label>
+                <input name="emq2_item16" id="emq2_item16_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item16_2">2</label>
+                <input name="emq2_item16" id="emq2_item16_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item16_3">3</label>
+                <input name="emq2_item16" id="emq2_item16_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item16_4">4</label>
+                <input name="emq2_item16" id="emq2_item16_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item16_5">5</label>
+                <input name="emq2_item16" id="emq2_item16_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item16_6">6</label>
+                <input name="emq2_item16" id="emq2_item16_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item16_7">7</label>
+                <input name="emq2_item16" id="emq2_item16_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item16_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item17" id="emq2_item17_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item17_0">0</label>
+                <input name="emq2_item17" id="emq2_item17_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item17_1">1</label>
+                <input name="emq2_item17" id="emq2_item17_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item17_2">2</label>
+                <input name="emq2_item17" id="emq2_item17_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item17_3">3</label>
+                <input name="emq2_item17" id="emq2_item17_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item17_4">4</label>
+                <input name="emq2_item17" id="emq2_item17_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item17_5">5</label>
+                <input name="emq2_item17" id="emq2_item17_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item17_6">6</label>
+                <input name="emq2_item17" id="emq2_item17_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item17_7">7</label>
+                <input name="emq2_item17" id="emq2_item17_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item17_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item18" id="emq2_item18_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item18_0">0</label>
+                <input name="emq2_item18" id="emq2_item18_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item18_1">1</label>
+                <input name="emq2_item18" id="emq2_item18_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item18_2">2</label>
+                <input name="emq2_item18" id="emq2_item18_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item18_3">3</label>
+                <input name="emq2_item18" id="emq2_item18_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item18_4">4</label>
+                <input name="emq2_item18" id="emq2_item18_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item18_5">5</label>
+                <input name="emq2_item18" id="emq2_item18_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item18_6">6</label>
+                <input name="emq2_item18" id="emq2_item18_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item18_7">7</label>
+                <input name="emq2_item18" id="emq2_item18_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item18_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item19" id="emq2_item19_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item19_0">0</label>
+                <input name="emq2_item19" id="emq2_item19_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item19_1">1</label>
+                <input name="emq2_item19" id="emq2_item19_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item19_2">2</label>
+                <input name="emq2_item19" id="emq2_item19_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item19_3">3</label>
+                <input name="emq2_item19" id="emq2_item19_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item19_4">4</label>
+                <input name="emq2_item19" id="emq2_item19_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item19_5">5</label>
+                <input name="emq2_item19" id="emq2_item19_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item19_6">6</label>
+                <input name="emq2_item19" id="emq2_item19_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item19_7">7</label>
+                <input name="emq2_item19" id="emq2_item19_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item19_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item20" id="emq2_item20_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item20_0">0</label>
+                <input name="emq2_item20" id="emq2_item20_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item20_1">1</label>
+                <input name="emq2_item20" id="emq2_item20_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item20_2">2</label>
+                <input name="emq2_item20" id="emq2_item20_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item20_3">3</label>
+                <input name="emq2_item20" id="emq2_item20_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item20_4">4</label>
+                <input name="emq2_item20" id="emq2_item20_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item20_5">5</label>
+                <input name="emq2_item20" id="emq2_item20_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item20_6">6</label>
+                <input name="emq2_item20" id="emq2_item20_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item20_7">7</label>
+                <input name="emq2_item20" id="emq2_item20_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item20_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item21" id="emq2_item21_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item21_0">0</label>
+                <input name="emq2_item21" id="emq2_item21_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item21_1">1</label>
+                <input name="emq2_item21" id="emq2_item21_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item21_2">2</label>
+                <input name="emq2_item21" id="emq2_item21_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item21_3">3</label>
+                <input name="emq2_item21" id="emq2_item21_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item21_4">4</label>
+                <input name="emq2_item21" id="emq2_item21_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item21_5">5</label>
+                <input name="emq2_item21" id="emq2_item21_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item21_6">6</label>
+                <input name="emq2_item21" id="emq2_item21_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item21_7">7</label>
+                <input name="emq2_item21" id="emq2_item21_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item21_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item22" id="emq2_item22_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item22_0">0</label>
+                <input name="emq2_item22" id="emq2_item22_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item22_1">1</label>
+                <input name="emq2_item22" id="emq2_item22_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item22_2">2</label>
+                <input name="emq2_item22" id="emq2_item22_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item22_3">3</label>
+                <input name="emq2_item22" id="emq2_item22_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item22_4">4</label>
+                <input name="emq2_item22" id="emq2_item22_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item22_5">5</label>
+                <input name="emq2_item22" id="emq2_item22_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item22_6">6</label>
+                <input name="emq2_item22" id="emq2_item22_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item22_7">7</label>
+                <input name="emq2_item22" id="emq2_item22_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item22_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item23" id="emq2_item23_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item23_0">0</label>
+                <input name="emq2_item23" id="emq2_item23_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item23_1">1</label>
+                <input name="emq2_item23" id="emq2_item23_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item23_2">2</label>
+                <input name="emq2_item23" id="emq2_item23_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item23_3">3</label>
+                <input name="emq2_item23" id="emq2_item23_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item23_4">4</label>
+                <input name="emq2_item23" id="emq2_item23_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item23_5">5</label>
+                <input name="emq2_item23" id="emq2_item23_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item23_6">6</label>
+                <input name="emq2_item23" id="emq2_item23_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item23_7">7</label>
+                <input name="emq2_item23" id="emq2_item23_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item23_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item24" id="emq2_item24_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item24_0">0</label>
+                <input name="emq2_item24" id="emq2_item24_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item24_1">1</label>
+                <input name="emq2_item24" id="emq2_item24_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item24_2">2</label>
+                <input name="emq2_item24" id="emq2_item24_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item24_3">3</label>
+                <input name="emq2_item24" id="emq2_item24_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item24_4">4</label>
+                <input name="emq2_item24" id="emq2_item24_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item24_5">5</label>
+                <input name="emq2_item24" id="emq2_item24_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item24_6">6</label>
+                <input name="emq2_item24" id="emq2_item24_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item24_7">7</label>
+                <input name="emq2_item24" id="emq2_item24_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item24_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item25" id="emq2_item25_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item25_0">0</label>
+                <input name="emq2_item25" id="emq2_item25_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item25_1">1</label>
+                <input name="emq2_item25" id="emq2_item25_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item25_2">2</label>
+                <input name="emq2_item25" id="emq2_item25_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item25_3">3</label>
+                <input name="emq2_item25" id="emq2_item25_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item25_4">4</label>
+                <input name="emq2_item25" id="emq2_item25_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item25_5">5</label>
+                <input name="emq2_item25" id="emq2_item25_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item25_6">6</label>
+                <input name="emq2_item25" id="emq2_item25_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item25_7">7</label>
+                <input name="emq2_item25" id="emq2_item25_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item25_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item26" id="emq2_item26_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item26_0">0</label>
+                <input name="emq2_item26" id="emq2_item26_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item26_1">1</label>
+                <input name="emq2_item26" id="emq2_item26_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item26_2">2</label>
+                <input name="emq2_item26" id="emq2_item26_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item26_3">3</label>
+                <input name="emq2_item26" id="emq2_item26_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item26_4">4</label>
+                <input name="emq2_item26" id="emq2_item26_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item26_5">5</label>
+                <input name="emq2_item26" id="emq2_item26_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item26_6">6</label>
+                <input name="emq2_item26" id="emq2_item26_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item26_7">7</label>
+                <input name="emq2_item26" id="emq2_item26_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item26_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item27" id="emq2_item27_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item27_0">0</label>
+                <input name="emq2_item27" id="emq2_item27_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item27_1">1</label>
+                <input name="emq2_item27" id="emq2_item27_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item27_2">2</label>
+                <input name="emq2_item27" id="emq2_item27_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item27_3">3</label>
+                <input name="emq2_item27" id="emq2_item27_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item27_4">4</label>
+                <input name="emq2_item27" id="emq2_item27_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item27_5">5</label>
+                <input name="emq2_item27" id="emq2_item27_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item27_6">6</label>
+                <input name="emq2_item27" id="emq2_item27_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item27_7">7</label>
+                <input name="emq2_item27" id="emq2_item27_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item27_8">8</label>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal" data-enhance="false">
+                <legend>__item__</legend>
+                <input name="emq2_item28" id="emq2_item28_0" class="emq2_radio" value="0" type="radio">
+                <label for="emq2_item28_0">0</label>
+                <input name="emq2_item28" id="emq2_item28_1" class="emq2_radio" value="1" type="radio">
+                <label for="emq2_item28_1">1</label>
+                <input name="emq2_item28" id="emq2_item28_2" class="emq2_radio" value="2" type="radio">
+                <label for="emq2_item28_2">2</label>
+                <input name="emq2_item28" id="emq2_item28_3" class="emq2_radio" value="3" type="radio">
+                <label for="emq2_item28_3">3</label>
+                <input name="emq2_item28" id="emq2_item28_4" class="emq2_radio" value="4" type="radio">
+                <label for="emq2_item28_4">4</label>
+                <input name="emq2_item28" id="emq2_item28_5" class="emq2_radio" value="5" type="radio">
+                <label for="emq2_item28_5">5</label>
+                <input name="emq2_item28" id="emq2_item28_6" class="emq2_radio" value="6" type="radio">
+                <label for="emq2_item28_6">6</label>
+                <input name="emq2_item28" id="emq2_item28_7" class="emq2_radio" value="7" type="radio">
+                <label for="emq2_item28_7">7</label>
+                <input name="emq2_item28" id="emq2_item28_8" class="emq2_radio" value="8" type="radio">
+                <label for="emq2_item28_8">8</label>
+            </fieldset>
+            
+            <div id="totalSum_emq2">
+                <!-- sum result -->
+            </div>
+            
+            <input data-theme="b" value="Zapisz" type="button" id="btnSubmit_emq2">
+        </form>
+            <input data-theme="b" value="Wyczyść" type="button" id="reset_emq2">
+		<p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b"><<<</a></p>
+            
+        <a href="#emqPoints" class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-btn-b btnCheatSheet" data-rel="dialog" data-transition="pop"></a>
+	</div><!-- /content -->
+
+</div><!-- /EMQ 2 -->
+    
+<!-- DATABASE -->
+<div data-role="page" id="database" data-theme="a">
+
+<div role="main" class="ui-content">
+    <h2>Baza wyników</h2>
+    
+    <div id="results">
+            <!-- database -->
+    </div>
+    
+    <input data-theme="b" value="Export do pliku html" type="button" id="saveToFile">
+    <p>Plik emq.html zostanie zapisany w katalogu głównym urządzenia (dostępnym bez konieczności rootowania). Będzie on zawierał wszystkie zapisane dane: ID, wiek, wersję testu, wynik sumaryczny, odpowiedzi na poszczególne pytania, datę.</p>
+    <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b"><<<</a></p>
+
+</div><!-- /content -->
+
+</div><!-- /DATABASE -->
+
+<!-- ABOUT popup -->
+<div data-role="page" id="about">
+
+	<div data-role="header" data-theme="b">
+		<h1>INFO</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+        <p>Oryginalny EMQ: Sunderland A, Harris JE, Gleave J. Memory failures in everyday life following severe head injury. J Clin Neuropsychol 1984;6:125–141.</p>
+        <h2>EMQmobile stworzyła ekipa neurony.org</h2>
+		<p>Tłumaczenie i adaptacja:<br> dr n. med. Szczepan Iwański<br>
+            Wsparcie merytoryczne:<br> dr n. med. Marcin Leśniak<br>
+            Twórca appki:<br> Patryk Mazurkiewicz
+        </p>
+        <img class="bigger" src="img/logo2.svg" >
+        <hr>
+        <p>powered by: jQuery Mobile | PhoneGap/Apache Cordova</p>
+	</div><!-- /content -->
+
+</div><!-- /ABOUT popup -->
+
+<!-- LEFT external panel -->
+<div data-role="panel" id="menu" data-theme="b" data-display="push">
+    <ul data-role="listview">
+        <li data-icon="back"><a href="#" data-rel="close"></a></li>
+        <li><a href="#emq1" class="ui-btn ui-shadow ui-corner-all">EMQ dla Pacjenta</a></li>
+        <li><a href="#emq2" class="ui-btn ui-shadow ui-corner-all">EMQ dla Opiekuna</a></li>
+        <li><a href="#database" class="ui-btn ui-shadow ui-corner-all">Baza wyników</a></li>
+        <li><a href="#about" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">O programie</a></li>
+    </ul>
+</div><!-- /left external panel -->
+
+<!-- EMQ POINTS popup -->
+<div data-role="page" id="emqPoints">
+
+	<div data-role="header" data-theme="b">
+		<h1>Ocena EMQ</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+        <ul data-role="listview">
+            <li>0 = ani razu w ciągu ostatnich 3 miesięcy</li>
+            <li>1 = mniej więcej raz w ciągu ostatnich 3 miesięcy</li>
+            <li>2 = więcej niż raz w ciągu ostatnich 3 miesięcy, alerzadziej niż raz na miesiąc</li>
+            <li>3 = mniej więcej raz na miesiąc </li>
+            <li>4 = częściej niż raz w miesiącu, ale rzadziej niż raz na tydzień </li>
+            <li>5 = mniej więcej raz na tydzień </li>
+            <li>6 = częściej niż raz na tydzień, ale rzadziej niż raz dziennie </li>
+            <li>7 = mniej więcej raz dziennie </li>
+            <li>8 = częściej niż raz dziennie </li>
+        </ul>
+	</div><!-- /content -->
+
+</div><!-- /EMQ POINTS popup -->
+    
+<!-- FOOTER -->
+<div data-role="footer" id="footer" data-position="fixed" data-theme="b">
+    <img class="center" src="img/logo2.svg" >
+</div><!-- /footer -->
+
+
+</body>
+</html>

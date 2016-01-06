@@ -1,0 +1,92 @@
+input[class*="emq"]{
+    display: none;
+}
+
+label[for*="item"]{
+    display: inline-block;
+    border: 1px solid #9b9b9b;
+    width: 9%;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 2% 0 2% 0;
+}
+
+label[for*="item"]:hover{
+    background-color: #ebe9e9;
+}
+
+input[class*="emq"]:checked + label {
+    background-color: rgb(81, 172, 221);
+    color: white;
+    text-shadow: none;
+}
+
+ol{
+    list-style-type: none;
+}
+
+fieldset{
+    margin: 3em 0 3em 0 !important;
+}
+
+div[id*="totalSum"]{
+    border-top: 1px solid black;
+    text-align: right;
+    margin: 1em;
+}
+
+div[id*="totalSum"]:before{
+    content: "wynik: ";
+}
+
+
+#results table{
+    border-collapse: collapse;
+}
+
+#results table, th, td{
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+}
+
+#results tr:nth-child(odd){
+    background-color: #d3d3d3;
+}
+
+img.center{
+    height: 2em;
+    display: block;
+    margin: 0 auto;
+}
+
+img.bigger{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+    background-color: #101010;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+#emqPoints li{
+    font-size: 0.7em;
+    white-space: normal !important;
+}
+
+.btnCheatSheet {
+    width: 1.5em;
+    position: fixed;
+    bottom: 2.5em;
+    right: 0;
+    font-size: 0.8em;
+    padding: 1em 1em;
+}
+
+.inLine {
+    margin: 0.5em;
+    float:left;
+}
